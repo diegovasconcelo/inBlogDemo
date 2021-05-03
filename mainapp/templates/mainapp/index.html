@@ -1,0 +1,59 @@
+{% extends 'layouts/layout.html' %}
+{% block title %} {{title}} {% endblock %} 
+{% load bootstrap4 %}
+
+{% block content %}
+    <div class='row'>
+        <div class='col-12 text-center'>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert border-success" role="alert">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>  
+
+    <div class='row'>
+        <div class='col-12 pt-5 pb-5'>
+            <div class="main-title">
+                <p>inBlog</p>
+                <b>
+                    <div class="describe-title">
+                        <span class="h3">
+                            <br/> 
+                            Subtítulo descriptivo<br/>
+                            de tu espacio<br/>
+                            o lo que quieras.
+                        </span>
+                    </div>
+                </b>
+            </div>
+        </div>
+    </div>
+
+    <div class="row pt-5">
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+            {% load static %}
+            <img src="{% static 'images/inBlogTeam.svg' %}" class="d-sm-block img-fluid" alt="inBlog "/>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+    </div>
+
+    <div class='row'>
+        <div class='col-12 mt-5'>
+            {% if user.email %}
+                <p class="text-center">Que bueno es tenerte aquí {{request.user.first_name}} {{user.last_name}}</p>
+            {% else %}
+                <p class="text-center text-decoration-none"><a href="{% url 'register' %}">Regístrate en inBlog</a></p>
+                <p class="text-center text-decoration-none"><small>Si ya tienes una cuenta <a href="{% url 'login' %}">Identifícate.</a></small></p>
+            {% endif %}
+        </div>
+    </div>
+        
+
+    
+
+{% endblock %}

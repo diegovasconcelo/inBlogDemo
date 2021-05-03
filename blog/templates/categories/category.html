@@ -1,0 +1,19 @@
+{% extends 'layouts/layout.html' %}
+{% block title %} {{category.name}} {% endblock %} 
+{% load bootstrap4 %}
+
+{% block content %}
+    <div class='row'>
+        <div class='col-12'>
+            <h1 class='page-title'>{{category.name}}</h1>
+            <h5 class='ml-5'>{{category.description}}</h5>
+        </div>
+    </div>
+    
+
+    {% include 'articles/articles.html' %} 
+    {% include '../articles/pagination.html'%}
+
+    
+
+{% endblock %}

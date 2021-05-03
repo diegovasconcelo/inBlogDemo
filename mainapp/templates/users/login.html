@@ -1,0 +1,40 @@
+{% extends 'layouts/layout.html' %}
+{% block title %} {{title}} {% endblock %} 
+{% load bootstrap4 %}
+
+{% block content %}
+    <div class='row'>
+        <div class='col-12'>
+            <h1 class='text-center'>{{title}}</h1>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class='col-12 col-sm-2 col-md-3 col-lg-4 col-xl-4'>
+        </div>
+        <div class='col-12 col-sm-8 col-md-6 col-lg-4 col-xl-4'>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert border-warning text-center" role="alert">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <form action='' method='POST'>
+                {% csrf_token %}
+                <p>
+                    <input type="text" class="form-control border-primary" name="username" placeholder="Nombre de usuario">
+                </p>
+                <p>
+                    <input type="password" class="form-control border-primary" name="password" placeholder="Contraseña">
+                </p>
+                <button type="submit" class="btn border-info"><span class="text-muted">Iniciar sessión</span></button>
+            </form>
+            <p class="text-center text-decoration-none mt-4"><small>Si no tienes una cuenta <a href="{% url 'register' %}">Regístrate.</a></small></p>
+        </div>
+        <div class='col-12 col-sm-2 col-md-3 col-lg-4 col-xl-4'>
+        </div>
+    </div>
+
+{% endblock %}

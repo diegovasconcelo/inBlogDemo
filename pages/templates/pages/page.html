@@ -1,0 +1,41 @@
+{% extends 'layouts/layout.html' %}
+{% block title %} {{page.title}} {% endblock %} 
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+    <div class='row'>
+        <div class='col-12'>
+            <h1 class="page-title">{{page.title}}</h1>
+        </div>
+        <div class='col-12'>
+            <p>{{page.content|safe}}</p>
+        </div>
+        
+    </div>
+    <!--Imagenes diferentes para cada sección de la página-->
+    {% if page.title == 'Servicios' %}
+        <div class="row pt-5">
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <img src="{% static 'images/inBlogStorage.svg' %}" class="d-sm-block img-fluid" alt="inBlog "/></div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <img src="{% static 'images/inBlogTeamMeeting.svg' %}" class="d-sm-block img-fluid" alt="inBlog "/>
+            </div>
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+            <img src="{% static 'images/inBlogFastCo.svg' %}" class="d-sm-block img-fluid" alt="inBlog "/></div>
+        </div>
+    {% elif page.title == 'Acerca de' %}
+        <div class="row pt-5">
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <img src="{% static 'images/inBlogDeveloper.svg' %}" class="d-sm-block img-fluid" alt="inBlog "/>
+            </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <img src="{% static 'images/inBlogDevelopment.svg' %}" class="d-sm-block img-fluid" alt="inBlog "/>
+            </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <img src="{% static 'images/inBlogPython.svg' %}" class="d-sm-block img-fluid" alt="inBlog and Python"/>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}

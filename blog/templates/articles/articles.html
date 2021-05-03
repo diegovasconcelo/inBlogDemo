@@ -1,0 +1,36 @@
+<div class="row">
+    {% for article in articles %}
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+            <div class="card-group">
+
+                <div class="card h-100 bg-dark m-1">
+
+                    {% if article.image != 'null' and article.image.url|length >= 1 %}
+                        <div class="overflow">
+                            <img class="card-img-top" src="{{article.image.url}}" alt="{{article.title}}"/>
+                        </div>
+                    {% endif %}
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a class="article-title" href='{% url 'article' article.id%}'>{{article.title}}</a>
+                        </h5>
+                        <p class="card-text">
+                            <small>
+                                {% for category in article.categories.all %}
+                                    <a href=' {% url 'category' category.id %} '>{{category.name}}</a>
+                                    {% if forloop.counter < article.categories.all|length %}
+                                        {{ '-' }}
+                                    {% endif %}
+                                {% endfor %}
+                            </small>
+                        </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <small class="text-muted">Escrito por {{article.user}} el {{article.created_at|date:"d/m/Y" }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

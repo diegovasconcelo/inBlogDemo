@@ -1,0 +1,253 @@
+ body {
+    background: #1f2123;
+  }
+
+  .main-title {
+    padding: 0.5em 1em;
+    font: normal 40px/50px Montserrat, sans-serif;
+    color: #999;
+  }
+  .main-title p {
+    height: 50px;
+    float: left;
+    margin-right: 0.3em;
+  }
+  .main-title b {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    height: 50px;
+    top: 40px;
+  }
+  .main-title .describe-title {
+    display: inline-block;
+    color: #38C6BA;
+    position: relative;
+    top: 0;
+    left: 0;
+  
+    
+  /*animation*/
+   -webkit-animation:move 7s;
+     -moz-animation:move 7s;
+      -ms-animation:move 7s;
+       -o-animation:move 7s;
+          animation:move 7s; 
+  /*animation-iteration-count*/
+  -webkit-animation-iteration-count:infinite;
+     -moz-animation-iteration-count:infinite;
+      -ms-animation-iteration-count:infinite;
+       -o-animation-iteration-count:infinite;
+          animation-iteration-count:infinite; 
+  /*animation-delay*/
+  -webkit-animation-delay:2s;
+     -moz-animation-delay:2s;
+      -ms-animation-delay:2s;
+       -o-animation-delay:2s;
+          animation-delay:2s;
+   }
+  @keyframes move{
+  0%  { top: 0px; }
+  20% { top: -50px; }
+  40% { top: -100px; }
+  60% { top: -150px; }
+  80% { top: -200px; }
+  } 
+  
+   @-webkit-keyframes move {
+      0%  { top: 0px; }
+      20% { top: -50px; }
+      40% { top: -100px; }
+      60% { top: -150px; }
+      80% { top: -200px; }
+  }
+  @-moz-keyframes move {
+      0%  { top: 0px; }
+      20% { top: -50px; }
+      40% { top: -100px; }
+      60% { top: -150px; }
+      80% { top: -200px; }
+  }
+  @-o-keyframes move {
+      0%  { top: 0px; }
+      20% { top: -50px; }
+      40% { top: -100px; }
+      60% { top: -150px; }
+      80% { top: -200px; }
+  }
+  @keyframes move {
+      0%  { top: 0px; }
+      20% { top: -50px; }
+      40% { top: -100px; }
+      60% { top: -150px; }
+      80% { top: -200px; }
+  }  
+
+.main-content{
+  background-color:#1f2123;
+  color:#9a9da0;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  min-height: 50em; 
+}
+
+a,
+a .website{
+  text-decoration: none;
+  color:#38C6BA;
+  transition: all 1000ms;
+}
+
+a:hover{
+  text-decoration: none;
+  color:#B82AAF;
+}
+
+.website:hover{
+  font-family: Serif, Arial, Helvetica, sans-serif;
+  animation: fluido ease-in-out;
+  background: linear-gradient(-45deg, #B82AAF, #873FA8, #23a6d5, #38C6BA, #28A2BF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-title{
+  color:#38C6BA;
+  transition: all 1000ms;
+  display: inline;
+}
+.page-title:hover{
+  letter-spacing: 0.1em;
+}
+
+/* login and signup */
+.form-control{
+  background-color: transparent !important;
+  color: #b1b1b1!important;
+}
+
+.article-title{
+  color:#28A2BF; 
+}
+
+/* img in detail */
+p img{
+  display:block;
+  margin:auto;
+}
+
+.card-group{
+  height: 95%;
+}
+
+/*card effect */
+.overflow{
+  height: 50%;
+  overflow: hidden;
+}
+
+.overflow .card-img-top{
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+}
+
+.overflow .card-img-top:hover{
+  transform: scale(1.4);
+}
+
+img{
+  vertical-align: middle;
+  border-style: none;
+}
+.img-fluid{
+  max-width: 100%;
+  height: auto;
+}
+
+.autor{
+  color: #38C6BA !important;
+}
+
+.page-item.active .page-link{
+  background-color: #1f2123;
+  border-color: #007bff;
+  color: #1572d4d3;
+}
+
+/*logo*/
+#logo{
+  padding-left: 2.3rem;
+}
+#logoBox{
+  height: inherit;
+  width: inherit;
+  position: relative;
+
+}
+#box1{
+  background: linear-gradient(to bottom right, #38C6BA, #2a57be);
+  height: 1.3em;
+  width: 1.3em;
+  position: absolute;
+  border-radius: 3px;
+}
+
+#box2{
+  margin-top:0px;
+  background: linear-gradient(90deg, #b82aafeb, #38c6baeb);
+  height: 1.3em;
+  width: 1.3em;
+  position: absolute;
+  transform: rotate(45deg);
+  border-radius: 3px;
+}
+#box2{
+  animation: float 6s infinite ease-in-out alternate;
+}
+
+
+@keyframes float {
+    100% {
+    transform: rotate(75deg);
+  }
+}
+
+
+.error404 h1{
+  font-size: 4em;
+  animation: fluido 10s ease-in-out infinite;
+}
+
+.error404 h2{
+  animation: fluido 15s ease-in-out infinite;
+}
+
+.error404 h4{
+  animation: fluido 20s ease-in-out infinite;
+}
+
+.main-title p,
+#logo{
+  animation: fluido 10s ease-in-out infinite;
+}
+
+
+.error404 h1,
+.error404 h2, 
+.error404 h4,
+.main-title p,
+#logo {
+  background: linear-gradient(-45deg, #F7B34A, #B82AAF, #873FA8, #23a6d5, #38C6BA, #28A2BF);
+  background-size: 300%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes fluido {
+    0% { background-position: 0 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0 50% }
+}
+ 

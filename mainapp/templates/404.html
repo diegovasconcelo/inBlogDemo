@@ -1,0 +1,15 @@
+{% extends 'layouts/layout.html' %}
+{% block title %} 404 {% endblock %} 
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+    <div class='row '>
+        <div class='col-12 text-center error404'>
+            <h1 class='m-4'>404</h1>
+            <h2 class='mt-1'> Página no encontrada</h1>
+            <h4 class='m-5'><a href={% url 'index' %}> Volver a HOME</a></h4>
+        </div>
+    </div>
+
+{% endblock %}

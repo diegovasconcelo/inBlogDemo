@@ -1,0 +1,27 @@
+{% extends 'layouts/layout.html' %}
+{% block title %} {{article.title}} {% endblock %} 
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+    <div class='row'>
+        <div class='col-12'>
+            <h1 class="article-title pt-4">{{article.title}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="text-center">
+                {% if article.image != 'null' and article.image.url|length >= 1 %}
+                    <img class="img-fluid rounded m-2" alt="{{ article.title }}" src='{{article.image.url}}'/>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 m-2">
+            <p class="text-center mb-5">Escrito por <span class="autor">{{article.user.username}}</span> | <small>{{article.created_at|date:"d/m/Y H:m"}} Hs</small></p>
+            <p>{{article.content|safe}}</p>
+        </div>
+    </div>
+{% endblock %}
